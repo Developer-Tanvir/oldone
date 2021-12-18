@@ -1,15 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;500;600;700&display=swap'); */
 
 @font-face {
-    font-family: Henderson Sans;
+    font-family: "Henderson Sans";
     src: url(../font/HendersonSansBold.otf);
 }
 
 html {
     --primary-color: #cb252b;
     --secondary-color: #2f2e7a;
-    --font-amiri: 'Henderson Sans';
-    --font-open-sans: 'Henderson Sans', sans-serif;
+    --font-amiri: Henderson Sans !important;
+    --font-open-sans: Henderson Sans, sans-serif;
 }
 
 /* custom scrollbar  */
@@ -149,9 +149,9 @@ h4 {
     width: 30px;
     background: var(--secondary-color);
     border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    margin: auto;
+    margin-bottom: 20px !important;
+    
+    margin-left: 48%;
 }
 
 .section-title-border::before {
@@ -286,7 +286,7 @@ h4 {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 0.2rem 0;
+    padding: 0.6rem 0;
 }
 
 .nav-links {
@@ -304,8 +304,9 @@ nav {
 .nav-links a {
     color: var(--secondary-color);
     padding: .5rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: all .2s linear;
+    padding: 16px;
 }
 
 .nav-active {
@@ -488,14 +489,16 @@ header {
 .box-normal h4 a{
     color: white;
 }
+.box-normal h4 a:hover{
+    color: white;
+}
 .box{
     transition: all 0.5s;
 }
-.box:hover{
+.box:hover {
     transform: scale(1.08);
     transform-origin: bottom;
-    border-radius: 0px 25px 0px 25px;
-    box-shadow: 0px 10px 14px 1px var(--secondary-color);
+    box-shadow: 1px 1px 14px 7px rgb(183 179 179);
     cursor: pointer;
 }
 
@@ -531,12 +534,7 @@ h4 a {
     margin: 5rem 0;
 }
 
-.text-center {
-    text-align: center!important;
-    padding-top: 1rem;
-    padding-left: 2rem;
-    font-size: 1.5rem;
-}
+
 .about-content {
     background: linear-gradient(to left, #cb252b, #2f2e7a);
     padding: 3rem;
@@ -549,7 +547,9 @@ h4 a {
     padding: 0rem 1.5rem;
     margin-bottom: 1.5rem;
 }
-
+.about h2{
+    text-align: left;
+}
 .about-content p {
     color: rgba(255, 255, 255, 0.883);
 }
@@ -558,7 +558,9 @@ h4 a {
     height: 350px;
     object-fit: cover;
 }
-
+.about .section-title-border{
+    margin-left: 0;
+}
 /*homepage counter  */
 
 
@@ -573,7 +575,7 @@ h4 a {
     font-weight: 600;
 }
 .max-container{
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
 }
 .counter-section{
@@ -616,11 +618,12 @@ span.text-white.counter-text {
 .counter-box::before{
     content: "";
     position: absolute;
-    width: 150px;
+    width: 200px;
     height: 140%;
-    background: linear-gradient(#00ccff,#d400d4);
-    animation: animate 4s linear infinite;
+    background: linear-gradient(#fff,#fff);
+    animation: animate 3s linear infinite;
     border-radius: 50%;
+    animation-iteration-count: 1;
 }
 .counter-box::after{
     content: "";
@@ -634,9 +637,14 @@ span.text-white.counter-text {
 @keyframes animate {
     0%{
         transform: rotate(0deg);
+        background: var(--primary-color);
+    }
+    95%{
+        transform: rotate(350deg);
+        background: var var(--primary-color);
     }
     100%{
-        transform: rotate(350deg);
+        background: linear-gradient(#fff,#fff);
     }
 }
 
@@ -708,7 +716,9 @@ span.text-white.counter-text {
 .media-body i {
     font-size: 1rem;
 }
-
+.card-body .section-title-border{
+    margin-left: 0;
+}
 .card {
     border-radius: 0px;
     border: none;
@@ -869,6 +879,8 @@ input::placeholder {
   
   .slick-slide img {
       display: block;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
   }
   
   .slick-slide.slick-loading img {
@@ -1062,21 +1074,26 @@ a:hover {
 .media {
     display: flex;
     align-items: flex-start;
+    padding-bottom: 0 !important;
 }
 
 .media-body {
     flex: 1;
+    padding-right: 8px;
 }
 .media-body span{
     font-size: 12px;
 }
 .media-body h5{
+    font-size: 20px;
     margin: 0;
 }
 img.mr-3.post-thumb-sm {
-    max-width: 8rem;
-    margin: 0 1rem;
+    max-width: 11rem;
     
+    margin: 0;
+    margin-right: 10px;
+    padding: 0 !important;
 }
 
 .page-item.active .page-link {
