@@ -420,11 +420,12 @@ a {
 
 /* hero section design  */
 .hero-banner {
-    background-image: url(../images/blog/ship-container-2.png);
+    background-image: url(../images/hero1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5rem 0;
     object-fit: cover;
+    background-position: center;
     position: relative;
 }
 
